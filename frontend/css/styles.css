@@ -1,0 +1,225 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+main {
+    padding: 2rem;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark-mode header {
+    background-color: #1e1e1e;
+}
+
+/* Accessibility */
+.accessibility-panel {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: #f1f1f1;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.accessibility-panel button {
+    margin-right: 0.5rem;
+}
+
+/* Profile Page Styles */
+form#profileForm fieldset {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+form#profileForm label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+form#profileForm input,
+form#profileForm select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Tutor Search Page Styles */
+form#searchForm {
+    margin-bottom: 2rem;
+}
+
+form#searchForm label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+form#searchForm select,
+form#searchForm input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+#tutorResults .tutor-card {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+#tutorResults .tutor-card h3 {
+    margin-top: 0;
+}
+
+#tutorResults .tutor-card button {
+    background-color: #28a745;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+#tutorResults .tutor-card button:hover {
+    background-color: #218838;
+}
+
+/* Dyslexia-Friendly Font */
+.dyslexia-font {
+    font-family: 'OpenDyslexic', Arial, sans-serif;
+}
+
+/* High Contrast Mode */
+.high-contrast {
+    background-color: black;
+    color: yellow;
+}
+
+.high-contrast a {
+    color: cyan;
+}
+
+.high-contrast header,
+.high-contrast footer {
+    background-color: black;
+    color: yellow;
+}
+
+/* Specific Page Styles */
+
+/* Register Page Styles */
+#registerForm {
+    max-width: 600px;
+    margin: auto;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#registerForm input {
+    margin-bottom: 1rem;
+}
+
+/* Login Page Styles */
+#loginForm {
+    max-width: 400px;
+    margin: auto;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#loginForm input {
+    margin-bottom: 1rem;
+}
+
+/* Profile Page Styles */
+.profile-container {
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Search Page Styles */
+.search-container {
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    header {
+        padding: 0.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 0.5rem 1rem;
+    }
+
+    form input,
+    form select {
+        font-size: 14px;
+    }
+
+    .accessibility-panel {
+        padding: 0.5rem;
+        bottom: 0.5rem;
+        right: 0.5rem;
+    }
+}

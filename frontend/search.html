@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Find Tutors - Inclusive Peer-Learning Platform</title>
+  <link rel="stylesheet" href="css/styles.css">
+  
+</head>
+<body>
+  <!-- Include Accessibility Options -->
+  <div id="accessibility-options" class="accessibility-panel">
+    <button id="increaseFont">Increase Font</button>
+    <button id="decreaseFont">Decrease Font</button>
+    <button id="darkModeToggle">Toggle Dark Mode</button>
+  </div>
+
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="search.html">Find Tutors</a>
+      <a href="profile.html">Profile</a>
+      <a href="logout.html">Logout</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Find a Tutor</h2>
+    <form id="searchForm">
+      <!-- Subject Selection -->
+      <label for="subject">Subject:</label>
+      <select id="subject" name="subject" required>
+        <option value="">--Select Subject--</option>
+        <option value="math">Mathematics</option>
+        <option value="science">Science</option>
+        <!-- Add more subjects as needed -->
+      </select>
+
+      <!-- Availability -->
+      <label for="availability">Availability:</label>
+      <input type="datetime-local" id="availability" name="availability">
+
+      <!-- Accessibility Needs -->
+      <fieldset>
+        <legend>Accessibility Needs</legend>
+        <label>
+          <input type="checkbox" name="accessibilityNeeds" value="screenReader">
+          Screen Reader Support
+        </label>
+        <label>
+          <input type="checkbox" name="accessibilityNeeds" value="signLanguage">
+          Sign Language
+        </label>
+        <!-- Add more options as needed -->
+      </fieldset>
+
+      <button type="submit">Search</button>
+    </form>
+
+    <!-- Tutors List -->
+    <section id="tutorResults">
+      <!-- Tutors will be dynamically inserted here -->
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Inclusive Peer-Learning Platform</p>
+  </footer>
+  <script src="js/scripts.js" defer></script>
+</body>
+</html>

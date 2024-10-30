@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Inclusive Peer-Learning Platform</title>
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Register</h2>
+    <form id="registrationForm" action="/register" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required> <br>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required> <br>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required> <br>
+
+      <label for="role">I am a:</label>
+      <select id="role" name="role" required>
+        <option value="student">Student</option>
+        <option value="tutor">Tutor</option>
+      </select><br>
+
+      <button type="submit">Register</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Inclusive Peer-Learning Platform</p>
+  </footer>
+  <script src="js/scripts.js" defer></script>
+</body>
+</html>
