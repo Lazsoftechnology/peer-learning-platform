@@ -55,26 +55,6 @@ app.post('/register', async (req, res) => {
         res.status(500).json({ error: 'User registration failed' });
     }
 });
-
-// User Registration
-app.post('/register', async (req, res) => {
-    const { name, email, password } = req.body;
-    console.log('Received data:', req.body); // Log the received data
-
-    if (!name || !email || !password) { // Check for all required fields
-        return res.status(400).json({ error: 'Name, email, and password are required' });
-    }
-
-    const hashedPassword = await bcrypt.hash(password, 10);
-
-    try {
-        const [result] = await db.query('INSERT INTO users (name, email, password) VALUES (?, ?, ?)', [name, email, hashedPassword]);
-        res.status(201).json({ message: 'User registered successfully' });
-    } catch (error) {
-        console.error('Error during registration:', error); // Log error for debugging
-        res.status(500).json({ error: 'User registration failed' });
-    }
-});
 // Middleware to protect routes
 function authenticateToken(req, res, next) {
     const token = req.headers['authorization'];
@@ -114,6 +94,35 @@ app.put('/profile', authenticateToken, async (req, res) => {
         res.status(500).json({ error: 'Failed to update profile' });
     }
 });
+
+// User Login
+app.post('/login', async (req, res) => {
+    const { email, password } = req.body;
+    
+    if (!email || !password) {
+        return res.status(400).json({ error: 'Email and password are required' });
+    }
+
+    try {
+        const [users] = await db.query('SELECT * FROM users WHERE email = ?', [email]);
+        if (users.length === 0) {
+            return res.status(401).json({ error: 'Invalid email or password' });
+        }
+        
+        const user = users[0];
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) {
+            return res.status(401).json({ error: 'Invalid email or password' });
+        }
+
+        const token = generateToken(user);
+        res.json({ message: 'Login successful', token });
+    } catch (error) {
+        console.error('Error during login:', error);
+        res.status(500).json({ error: 'Login failed' });
+    }
+});
+
 
 // Search Tutors
 app.get('/tutors', authenticateToken, async (req, res) => {
